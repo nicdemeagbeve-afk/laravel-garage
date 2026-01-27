@@ -1,0 +1,784 @@
+/* ============================================
+   AUTH PAGES - Professional Login Design
+   Couleurs: Gris neutre + Bleu professionnel
+   ============================================ */
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #ecf0f1;
+    --bg-lighter: #f8f9fa;
+    --border-color: #bdc3c7;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --shadow: 0 10px 40px rgba(44, 62, 80, 0.08);
+    --shadow-hover: 0 15px 50px rgba(44, 62, 80, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+/* ============================================
+   LOGIN CONTAINER
+   ============================================ */
+
+.login-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 10;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 20px rgba(52, 73, 94, 0.15);
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    color: white;
+    stroke-width: 1.5;
+}
+
+.login-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ============================================
+   FORM STYLING
+   ============================================ */
+
+.login-form-wrapper {
+    margin-bottom: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group-lg .input-group-text {
+    background: var(--bg-lighter);
+    border: 2px solid var(--border-color);
+    border-right: none;
+    color: var(--text-light);
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group-lg .form-control {
+    border: 2px solid var(--border-color);
+    border-left: none;
+    font-size: 16px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.input-group-lg .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+
+.input-group-lg .form-control:focus ~ .input-group-text {
+    border-color: var(--accent-color);
+}
+
+.input-group-text {
+    border-color: var(--accent-color);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* ============================================
+   CHECKBOX STYLING
+   ============================================ */
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ============================================
+   BUTTON STYLING
+   ============================================ */
+
+.btn-login {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 32px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    color: white;
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   LINKS STYLING
+   ============================================ */
+
+.forgot-password-link,
+.register-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.forgot-password-link:hover,
+.register-link:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.forgot-password-link::after,
+.register-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.forgot-password-link:hover::after,
+.register-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   ERROR MESSAGES
+   ============================================ */
+
+.invalid-feedback {
+    color: var(--danger-color) !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.is-invalid {
+    border-color: var(--danger-color) !important;
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* ============================================
+   DEMO CREDENTIALS SECTION
+   ============================================ */
+
+.login-demo-section {
+    background: var(--bg-lighter);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    margin-top: 30px;
+}
+
+.demo-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px 0;
+}
+
+.demo-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.credential-item {
+    font-size: 12px;
+    color: var(--text-color);
+    padding: 8px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.credential-item strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* ============================================
+   DECORATIVE ELEMENT
+   ============================================ */
+
+.decoration-element {
+    position: fixed;
+    bottom: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* ============================================
+   ULTRA RESPONSIVE - Mobile First
+   ============================================ */
+
+/* Extra Extra Small: 320px - 374px (Mobile phones) */
+@media (max-width: 374px) {
+    body {
+        font-size: 13px;
+    }
+
+    .login-wrapper {
+        padding: 24px 16px;
+        border-radius: 6px;
+        max-width: 100%;
+    }
+
+    .logo-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 12px;
+    }
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .login-title {
+        font-size: 18px;
+        margin: 0 0 4px 0;
+    }
+
+    .login-subtitle {
+        font-size: 12px;
+    }
+
+    .form-label {
+        font-size: 12px;
+    }
+
+    .input-group-lg .input-group-text {
+        padding: 8px 10px;
+    }
+
+    .input-group-lg .form-control {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .btn-login {
+        padding: 10px 16px;
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
+    .form-check-label {
+        font-size: 12px;
+    }
+
+    .forgot-password-link,
+    .register-link {
+        font-size: 12px;
+    }
+
+    .login-demo-section {
+        padding: 12px;
+        margin-top: 16px;
+    }
+
+    .demo-title {
+        font-size: 11px;
+        margin: 0 0 8px 0;
+    }
+
+    .demo-credentials {
+        gap: 4px;
+    }
+
+    .credential-item {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .decoration-element {
+        width: 120px;
+        height: 120px;
+        bottom: -40px;
+        right: -40px;
+    }
+
+    .login-form {
+        gap: 12px;
+    }
+
+    .form-group {
+        gap: 4px;
+    }
+}
+
+/* Extra Small: 375px - 475px (Mobile phones) */
+@media (min-width: 375px) and (max-width: 475px) {
+    body {
+        font-size: 14px;
+    }
+
+    .login-wrapper {
+        padding: 32px 20px;
+        border-radius: 8px;
+    }
+
+    .logo-box {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 14px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .login-title {
+        font-size: 20px;
+        margin: 0 0 6px 0;
+    }
+
+    .login-subtitle {
+        font-size: 13px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .input-group-lg .input-group-text {
+        padding: 10px 12px;
+    }
+
+    .input-group-lg .form-control {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .btn-login {
+        padding: 11px 20px;
+        font-size: 13px;
+    }
+
+    .form-check-label {
+        font-size: 13px;
+    }
+
+    .login-demo-section {
+        padding: 14px;
+        margin-top: 18px;
+    }
+
+    .demo-title {
+        font-size: 12px;
+    }
+
+    .credential-item {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .decoration-element {
+        width: 150px;
+        height: 150px;
+        bottom: -50px;
+        right: -50px;
+    }
+}
+
+/* Small: 476px - 576px (Large phones) */
+@media (min-width: 476px) and (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .login-wrapper {
+        padding: 40px 24px;
+        border-radius: 8px;
+        max-width: 420px;
+    }
+
+    .logo-box {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 16px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .login-title {
+        font-size: 22px;
+    }
+
+    .login-subtitle {
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .input-group-lg .input-group-text {
+        padding: 11px 13px;
+    }
+
+    .input-group-lg .form-control {
+        padding: 11px 13px;
+    }
+
+    .btn-login {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .login-demo-section {
+        padding: 16px;
+        margin-top: 20px;
+    }
+
+    .demo-title {
+        font-size: 12px;
+    }
+
+    .credential-item {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .decoration-element {
+        width: 200px;
+        height: 200px;
+        bottom: -50px;
+        right: -50px;
+    }
+}
+
+/* Medium: 577px - 768px (Tablet portrait) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .login-wrapper {
+        padding: 48px 32px;
+        max-width: 450px;
+    }
+
+    .logo-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .login-title {
+        font-size: 26px;
+    }
+
+    .login-subtitle {
+        font-size: 15px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .btn-login {
+        padding: 13px 28px;
+        font-size: 15px;
+    }
+
+    .login-demo-section {
+        padding: 18px;
+        margin-top: 24px;
+    }
+
+    .credential-item {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .decoration-element {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Large: 769px - 1024px (Tablet landscape & small desktop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .login-wrapper {
+        padding: 56px 40px;
+        max-width: 500px;
+    }
+
+    .logo-box {
+        width: 88px;
+        height: 88px;
+    }
+
+    .login-title {
+        font-size: 28px;
+    }
+
+    .login-demo-section {
+        padding: 20px;
+    }
+
+    .decoration-element {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Extra Large: 1025px+ (Desktop) */
+@media (min-width: 1025px) {
+    .login-wrapper {
+        padding: 60px 40px;
+        max-width: 450px;
+    }
+
+    .logo-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .login-title {
+        font-size: 28px;
+    }
+
+    .login-demo-section {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .decoration-element {
+        width: 300px;
+        height: 300px;
+        bottom: -100px;
+        right: -100px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .login-wrapper {
+        padding: 24px 32px;
+    }
+
+    .logo-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 8px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .login-title {
+        font-size: 18px;
+        margin: 0 0 2px 0;
+    }
+
+    .login-subtitle {
+        font-size: 12px;
+    }
+
+    .login-form {
+        gap: 10px;
+    }
+
+    .form-group {
+        gap: 4px;
+    }
+
+    .login-demo-section {
+        padding: 12px;
+        margin-top: 12px;
+    }
+
+    .demo-title {
+        font-size: 11px;
+        margin: 0 0 6px 0;
+    }
+
+    .credential-item {
+        font-size: 10px;
+        padding: 4px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .login-container {
+        background: white;
+    }
+
+    .login-wrapper {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+
+    .decoration-element {
+        display: none;
+    }
+}

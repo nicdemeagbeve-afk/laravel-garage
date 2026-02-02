@@ -1,0 +1,508 @@
+/* ============================================
+   LAYOUT CSS - Full Width Design
+   ============================================ */
+
+:root {
+    --header-height: 70px;
+    --header-height-mobile: 60px;
+    --footer-height: auto;
+}
+
+/* ============================================
+   APP WRAPPER - Flexbox Layout
+   ============================================ */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-lighter);
+    width: 100%;
+}
+
+/* ============================================
+   HEADER STYLING
+   ============================================ */
+
+.app-header {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    width:100%;
+}
+
+.app-header .navbar {
+    padding: 0.75rem 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-lg);
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 576px) {
+    :root {
+        --header-height-mobile: 60px;
+    }
+    
+    .app-header {
+        height: var(--header-height-mobile);
+    }
+    
+    .navbar-container {
+        padding: 0 var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+}
+
+/* ============================================
+   NAVBAR BRAND & LOGO
+   ============================================ */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: auto;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    height: 45px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    display: none;
+}
+
+@media (min-width: 577px) {
+    .brand-name {
+        display: inline;
+    }
+}
+
+.navbar-brand:hover {
+    opacity: 0.9;
+}
+
+/* ============================================
+   NAVBAR NAVIGATION
+   ============================================ */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 20px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--text-normal) !important;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 8px 12px !important;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+    background: var(--bg-lighter);
+}
+
+.nav-link.active {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+/* ============================================
+   AUTH BUTTONS IN NAVBAR
+   ============================================ */
+
+.btn-link-login {
+    color: var(--accent) !important;
+    font-weight: 600;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: 6px 12px !important;
+    transition: all var(--transition-fast);
+}
+
+.btn-link-login:hover {
+    background: var(--accent);
+    color: white !important;
+}
+
+.btn-link-register {
+    background: var(--accent);
+    color: rgb(255, 255, 255) !important;
+    border-radius: var(--radius-md);
+    padding: 6px 12px !important;
+    transition: all var(--transition-fast);
+}
+
+.btn-link-register:hover {
+    background: var(--accent-dark);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   DROPDOWN MENU
+   ============================================ */
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
+    padding: 12px 0;
+    min-width: 220px;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    color: var(--text-normal);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background: var(--bg-lighter);
+    color: var(--accent);
+}
+
+.dropdown-item.text-danger:hover {
+    background: #fee;
+    color: var(--danger);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.app-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-lighter);
+    min-height: 0;
+}
+
+/* Remove Bootstrap container constraints */
+.app-main .container,
+.app-main .container-fluid,
+.app-main .container-xxl {
+    max-width: none !important;
+    width: 100%;
+    padding: clamp(16px, 3vw, 40px);
+    margin: 0;
+    display: block !important;
+}
+
+@media (max-width: 576px) {
+    .app-main .container,
+    .app-main .container-fluid,
+    .app-main .container-xxl {
+        padding: clamp(12px, 2vw, 20px);
+    }
+}
+
+/* ============================================
+   FOOTER STYLING
+   ============================================ */
+
+.app-footer {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    margin-top: auto;
+    padding-top: clamp(32px, 5vw, 48px);
+    padding-bottom: clamp(24px, 4vw, 32px);
+    border-top: 3px solid var(--accent);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(24px, 4vw, 48px);
+    max-width: none;
+    width: 100%;
+    padding: 0 clamp(16px, 3vw, 40px);
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: clamp(16px, 3vw, 24px);
+    }
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-section h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.footer-section p {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.6;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: inline-block;
+}
+
+.footer-links li a:hover {
+    color: white;
+    transform: translateX(4px);
+}
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   FOOTER BOTTOM
+   ============================================ */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 576px) {
+    .navbar-container {
+        justify-content: space-between;
+    }
+
+    .navbar-brand {
+        gap: 8px;
+    }
+
+    .navbar-logo {
+        height: 40px;
+        max-width: 50px;
+    }
+
+    .navbar-collapse {
+        margin-top: 12px;
+        border-top: 1px solid var(--border-light);
+        padding-top: 12px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 4px;
+    }
+
+    .nav-link {
+        padding: 10px 8px !important;
+        width: 100%;
+    }
+
+    .btn-link-login,
+    .btn-link-register {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   TABLET OPTIMIZATIONS
+   ============================================ */
+
+@media (min-width: 577px) and (max-width: 1024px) {
+    .app-header {
+        height: var(--header-height);
+    }
+
+    .navbar-nav {
+        gap: 12px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   LARGE SCREEN OPTIMIZATIONS
+   ============================================ */
+
+@media (min-width: 1025px) {
+    .navbar-container {
+        padding: 0 clamp(20px, 5vw, 60px);
+    }
+
+    .app-main .container,
+    .app-main .container-fluid,
+    .app-main .container-xxl {
+        padding: clamp(32px, 5vw, 60px);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 clamp(32px, 5vw, 60px);
+    }
+}
+
+/* ============================================
+   LANDSCAPE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .app-header {
+        height: 55px;
+    }
+
+    .navbar-logo {
+        height: 35px;
+    }
+
+    .nav-link {
+        padding: 6px 10px !important;
+        font-size: 0.9rem;
+    }
+
+    .app-footer {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .footer-section h5 {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   HIGH DENSITY DISPLAYS (RETINA)
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar-logo {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .app-header {
+        display: none;
+    }
+
+    .app-main {
+        background: white;
+    }
+
+    .app-footer {
+        display: none;
+    }
+
+    .app-wrapper {
+        min-height: auto;
+    }
+}

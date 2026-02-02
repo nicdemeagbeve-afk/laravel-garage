@@ -1,0 +1,1022 @@
+/* ============================================
+   GARAGE MANAGER - Main CSS
+   Design Professional & Sober
+   Colors: Grey Neutral + Professional Blue
+   ============================================ */
+
+:root {
+    /* Primary Colors */
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --tertiary: #7f8c8d;
+    
+    /* Accent Colors */
+    --accent: #3498db;
+    --accent-dark: #2980b9;
+    --accent-light: #5dade2;
+    
+    /* Status Colors */
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --warning: #f39c12;
+    --info: #3498db;
+    
+    /* Neutral Colors */
+    --text-dark: #2c3e50;
+    --text-normal: #34495e;
+    --text-light: #7f8c8d;
+    --text-lighter: #bdc3c7;
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light: #ecf0f1;
+    --bg-lighter: #f8f9fa;
+    --bg-dark: #34495e;
+    
+    /* Borders */
+    --border: #bdc3c7;
+    --border-light: #ecf0f1;
+    --border-dark: #7f8c8d;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(44, 62, 80, 0.06);
+    --shadow-md: 0 4px 8px rgba(44, 62, 80, 0.08);
+    --shadow-lg: 0 10px 20px rgba(44, 62, 80, 0.1);
+    --shadow-xl: 0 20px 40px rgba(44, 62, 80, 0.12);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: var(--bg-lighter);
+    color: var(--text-normal);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-normal);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+/* ============================================
+   NAVBAR STYLING
+   ============================================ */
+
+.navbar {
+    background: var(--bg-white) !important;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary) !important;
+    letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-normal) !important;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color var(--transition-fast);
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.btn-primary,
+.btn-lg.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: darken(#e74c3c, 10%);
+    color: white;
+}
+
+.btn-warning {
+    background: var(--warning);
+    color: white;
+}
+
+.btn-warning:hover {
+    background: darken(#f39c12, 10%);
+    color: white;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-lg {
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+.form-control,
+.form-select,
+textarea.form-control {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--text-normal);
+    transition: all var(--transition-fast);
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    color: var(--text-normal);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-text {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border-top: 4px solid var(--accent);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-footer {
+    background: var(--bg-lighter);
+    border: none;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding: 16px 24px;
+}
+
+/* ============================================
+   ALERTS
+   ============================================ */
+
+.alert {
+    border: none;
+    border-left: 4px solid;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #27ae60;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #e74c3c;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #f39c12;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-color: #3498db;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-success {
+    background: var(--success);
+    color: white;
+}
+
+.badge-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.badge-warning {
+    background: var(--warning);
+    color: white;
+}
+
+.badge-info {
+    background: var(--info);
+    color: white;
+}
+
+.badge-secondary {
+    background: var(--tertiary);
+    color: white;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table thead th {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-weight: 700;
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color var(--transition-fast);
+}
+
+.table tbody tr:hover {
+    background-color: var(--bg-lighter);
+}
+
+.table tbody td {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.pagination .page-link:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+
+.modal-content {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 20px;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-footer {
+    background: var(--bg-lighter);
+    border: none;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding: 16px 24px;
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+
+.breadcrumb {
+    background: transparent;
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-item {
+    color: var(--text-light);
+}
+
+.breadcrumb-item.active {
+    color: var(--text-normal);
+    font-weight: 600;
+}
+
+.breadcrumb-item a {
+    color: var(--accent);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--accent-dark);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-primary {
+    color: var(--accent) !important;
+}
+
+.text-secondary {
+    color: var(--text-light) !important;
+}
+
+.text-success {
+    color: var(--success) !important;
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+.text-warning {
+    color: var(--warning) !important;
+}
+
+.text-info {
+    color: var(--info) !important;
+}
+
+.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+.bg-lighter {
+    background-color: var(--bg-lighter) !important;
+}
+
+.border-top {
+    border-top: 1px solid var(--border) !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.border-light {
+    border: 1px solid var(--border-light) !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg) !important;
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl) !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.transition-all {
+    transition: all var(--transition-normal);
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+
+.spinner-border {
+    color: var(--accent);
+    border-width: 3px;
+}
+
+.spinner-grow {
+    color: var(--accent);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ============================================ */
+
+/* === BREAKPOINTS === */
+/* XS: 320px - 374px (Extra small phones) */
+/* SM: 375px - 576px (Small phones) */
+/* MD: 577px - 768px (Tablets) */
+/* LG: 769px - 1024px (Large tablets & small desktop) */
+/* XL: 1025px - 1440px (Desktop) */
+/* XXL: 1441px+ (Large desktop) */
+
+/* ============================================
+   EXTRA SMALL: 320px - 374px
+   ============================================ */
+
+@media (max-width: 374px) {
+    html { font-size: 12px; }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 1rem; }
+    h5 { font-size: 0.9rem; }
+    h6 { font-size: 0.85rem; }
+    
+    p { font-size: 0.9rem; }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem !important;
+        margin: 0 !important;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .card {
+        border-radius: 6px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .table {
+        font-size: 0.85rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 6px 4px;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+}
+
+/* ============================================
+   SMALL: 375px - 576px
+   ============================================ */
+
+@media (min-width: 375px) and (max-width: 576px) {
+    html { font-size: 13px; }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.9rem; }
+    
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        margin: 0.3rem 0 !important;
+    }
+    
+    .btn {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-lg {
+        padding: 11px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .card {
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .card-body {
+        padding: 16px;
+    }
+    
+    .card-header {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .form-control,
+    .form-select {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .form-label {
+        font-size: 0.9rem;
+    }
+    
+    .table {
+        font-size: 0.9rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 8px 6px;
+    }
+    
+    .alert {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .badge {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .modal-body {
+        padding: 16px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+}
+
+/* ============================================
+   MEDIUM: 577px - 768px (Tablets)
+   ============================================ */
+
+@media (min-width: 577px) and (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+    
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.95rem;
+        margin: 0 8px;
+    }
+    
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .card {
+        margin-bottom: 16px;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .form-control,
+    .form-select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .table {
+        font-size: 0.95rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 10px 8px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* ============================================
+   LARGE: 769px - 1024px (Tablets landscape & Small desktop)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1.1rem; }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        margin: 0 12px;
+    }
+    
+    .btn {
+        padding: 11px 20px;
+    }
+    
+    .btn-lg {
+        padding: 13px 28px;
+    }
+    
+    .card {
+        margin-bottom: 18px;
+    }
+    
+    .card-body {
+        padding: 22px;
+    }
+    
+    .table {
+        font-size: 0.98rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 11px 10px;
+    }
+}
+
+/* ============================================
+   EXTRA LARGE: 1025px - 1440px (Desktop)
+   ============================================ */
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1rem; }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        margin: 0 16px;
+    }
+    
+    .btn {
+        padding: 12px 22px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* ============================================
+   XXTRA LARGE: 1441px+ (Large Desktop)
+   ============================================ */
+
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0 20px;
+    }
+    
+    .card {
+        margin-bottom: 24px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.1rem; }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 6px 8px;
+    }
+}
+
+@media (min-height: 900px) {
+    /* Pour les très grands écrans en hauteur */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2rem; }
+    
+    .card {
+        padding: 24px;
+    }
+}
+
+/* ============================================
+   RETINA DISPLAY & HIGH DPI
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimisations pour écrans haute résolution */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .btn, .card, .form-control {
+        border-width: 0.5px;
+    }
+}
+
+/* ============================================
+   FLEXBOX RESPONSIVE GRIDS
+   ============================================ */
+
+@media (max-width: 576px) {
+    .row > [class*="col"] {
+        margin-bottom: 12px;
+    }
+    
+    .d-none.d-sm-block {
+        display: block !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .navbar, .btn, .modal {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+}

@@ -49,7 +49,7 @@
     <!-- Comptes en attente d'approbation -->
     <div class="approve bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
         <h2 class="text-xl font-bold mb-4"> Comptes en Attente d'Approbation</h2>
-        <button class="btn-ad" href="{{ route('users.create') }}">Ajoutez un Nouvel Utilisateurs</button>
+        <a href=href="{{ route('users.create') }}"><button class="bg-green-500 text-white px-3 py-1 rounded"  >Ajoutez un Nouvel Utilisateurs</button></a>
         <table class="w-full">
             <thead>
                 <tr class="bg-yellow-100">
@@ -84,7 +84,7 @@
      <!-- Pannes récentes -->
         <div class="panne mb-8">
             <h2 class="text-2xl font-bold mb-4">📋 Pannes Récentes</h2>
-            <button href="{{ route('breakdowns.create') }}" class="btn-ad">Ajout de Pannes</button>
+            <a href="{{ route('breakdowns.create') }}" ><button class="bg-green-500 text-white px-3 py-1 rounded ">Ajout de Pannes</button> </a>
             <table class="w-full border">
                 <thead class="bg-gray-100">
                     <tr>
@@ -120,7 +120,7 @@
     <!-- Réparations récentes (nouvelle section ajoutée/déplacée) -->
         <div class="reparation mb-8">
             <h2 class="text-2xl font-bold mb-4">🔧 Réparations Récentes</h2>
-            <button href="{{ route('reparations.create') }}" class="btn-ad">Ajout de Réparations</button>
+            <a href="{{ route('reparations.create') }}" ><button class="bg-green-500 text-white px-3 py-1 rounded">Ajout de Réparations</button></a>
             <table class="w-full border">
                 <thead class="bg-gray-100">
                     <tr>
@@ -152,7 +152,7 @@
                 </tbody>
             </table>
             <div class="text-right mt-4">
-                <a href="{{ route('reparations.index') }}" class="btn-ad">Voir toutes les Réparations</a>
+                <a href="{{ route('reparations.index') }}" class="bg-green-500 text-white px-3 py-1 rounded ">Voir toutes les Réparations</a>
             </div>
         </div>
     </div>
@@ -177,7 +177,7 @@
     <!--Liste des tecnicien les plus demandez-->
     <div class="star">
         <h2 class=" text-2xl font-bold mb-4 mt-8">🛠️ Techniciens les Plus Demandés</h2>
-        <button href="{{ route('techniciens.create') }}" type="submit">Ajout de Techniciens</button>
+        <a href="{{ route('techniciens.create') }}" > <button class="bg-green-500 text-white px-3 py-1 rounded "> Ajout de Techniciens </button></a>
         <table class="w-full border">
             <thead class="bg-gray-100">
                 <tr>

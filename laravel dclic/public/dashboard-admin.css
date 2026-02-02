@@ -143,3 +143,6 @@
     padding: 25px;
     margin: 15px;
 }
+.star .star1 ,.star .h2{
+    display: flex;
+}

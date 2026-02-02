@@ -1,3 +1,5 @@
 CREATE DATABASE IF NOT EXISTS garage2_db;
-CREATE USER 'garage2_user'@'%' IDENTIFIED BY 'kpqnWLqvDzeaWgHl0cs5';
-GRANT ALL PRIVILEGES ON garage2_db.* TO 'garage1_user'@'%';
+ALTER USER 'garage7_user'@'%' IDENTIFIED BY 'kpqnWLqvDzeaWgHl0cs5';
+GRANT ALL PRIVILEGES ON garage7_db.* TO 'garage7_user'@'%';
+
+ALTER USER 'garage6_user'@'%' IDENTIFIED BY 'kpqnWLqvDzeaWgHl0cs5';

@@ -14,9 +14,10 @@
     <link href="{{ asset('welcome.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard-admin.css') }}" rel="stylesheet">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/assets/app-CpEEPCb_.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'public/welcome.css', 'public/dashboard-admin.css', 'public/style.css'])
 </head>
 <body>
     <div id="app">
@@ -101,4 +102,5 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('build/assets/app-Cj6ktIgB.js') }}"></script>
 </html>
